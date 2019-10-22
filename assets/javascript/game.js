@@ -4,15 +4,18 @@ $(document).ready(function () {
     let wins = 0;
     let losses = 0;
     
+    function rnd(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
     
     function game() {
         // Random number generator for target number between 19 - 120 and append targetNumber to the page
-        targetNumber = Math.floor(Math.random() * 102 + 19);
+        targetNumber = Math.floor(rnd(19,120));
         score = 0;
-        $("#button-1").val(Math.floor(Math.random() * 12 + 1));
-        $("#button-2").val(Math.floor(Math.random() * 12 + 1));
-        $("#button-3").val(Math.floor(Math.random() * 12 + 1));
-        $("#button-4").val(Math.floor(Math.random() * 12 + 1));
+        $("#button-1").val(rnd(1,12));
+        $("#button-2").val(rnd(1,12));
+        $("#button-3").val(rnd(1,12));
+        $("#button-4").val(rnd(1,12));
         $("#randomNumber").text(targetNumber);
         $("#wins").text("Wins: " + wins);
         $("#losses").text("Losses: " + losses);
